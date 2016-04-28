@@ -1,0 +1,506 @@
+{
+  "version": "0.0.2",
+  "array_category": "axiom_eureka",
+  "panel": "AUParent_293",
+  "is_default": true,
+  "categories": [
+    {
+      "name": "sample_qc",
+      "display": "Sample QC",
+      "thresholds": [
+          {
+          "name": "EQC_Min_Num_Of_Reads_to_Pass_Sample(All SNPs)",
+          "type": "float",
+          "display": "EQC Min Num Of Reads to Pass SNP (All SNPs)",
+          "min_value": "0",
+          "max_value": "5000",
+          "default_value": "21",
+          "current_value": "21",
+          "is_visible": "true",
+          "description": "EQC Min Num Of Reads to Pass SNP (All SNPs)"
+        },
+
+        {
+          "name": "EQC_Max_Num_Of_SNPs_to_Fail_Sample(All SNPs)",
+          "type": "float",
+          "display": "EQC Max Num Of SNPs to Fail Sample (All SNPs)",
+          "min_value": "0",
+          "max_value": "5000",
+          "default_value": "29",
+          "current_value": "29",
+          "is_visible": "true",
+          "description": "EQC Max Num Of SNPs to Fail Sample (All SNPs)"
+        },
+        {
+          "name": "qc_call_rate",
+          "type": "float",
+          "display": "QC call_rate (All SNPs)",
+          "min_value": "0",
+          "max_value": "100",
+          "default_value": "90",
+          "current_value": "90",
+          "is_visible": "true",
+          "description": "A sample’s call rate value must be larger than 'QC call_rate' to pass genotyping QC."
+        },       
+        {
+          "name": "EQC_Specific_SNP_File",
+          "type": "file",
+          "display": "EQC Specific SNP File",
+          "default_value": "",
+          "current_value": "",
+          "is_visible": "true",
+          "description": "EQC Specific SNP File",
+          "extensions": "All (*.ps,*.txt,*.tsv)|*.ps;*.txt;*.tsv|Loci List (*.ps)|*.ps|Loci List (*.txt)|*.txt|Loci List (*.tsv)|*.tsv"
+        },
+         {
+          "name": "EQC_Min_Num_Of_Reads_to_Pass_Sample(Specific SNPs)",
+          "type": "float",
+          "display": "EQC Min Num Of Reads to Pass SNP (Specific SNPs)",
+          "min_value": "0",
+          "max_value": "5000",
+          "default_value": "20",
+          "current_value": "20",
+          "is_visible": "true",
+          "description": "EQC Min Num Of Reads to Pass SNP (Specific SNPs)"
+        },
+        {
+          "name": "EQC_Max_Num_Of_SNPs_to_Fail_Sample(Specific SNPs)",
+          "type": "float",
+          "display": "EQC Max Num Of SNPs to Fail Sample (Specific SNPs)",
+          "min_value": "0",
+          "max_value": "5000",
+          "default_value": "5",
+          "current_value": "5",
+          "is_visible": "true",
+          "description": "EQC Max Num Of SNPs to Fail Sample (Specific SNPs)"
+        },
+         {
+          "name": "qc_call_rate_specific_SNPs",
+          "type": "float",
+          "display": "QC call_rate (Specific SNPs)",
+          "min_value": "0",
+          "max_value": "100",
+          "default_value": "90",
+          "current_value": "90",
+          "is_visible": "true",
+          "description": "QC call_rate (Specific SNPs)"
+        },
+        {
+          "name": "plate_qc_average_call_rate_warning",
+          "type": "float",
+          "display": "plate_qc_average_call_rate_warning",
+          "min_value": "0",
+          "max_value": "100",
+          "default_value": "99",
+          "current_value": "99",
+          "is_visible": "false"
+        },
+        {
+          "name": "plate_qc_percentsamplespassed",
+          "type": "float",
+          "display": "Percent of passing samples",
+          "min_value": "0",
+          "max_value": "100",
+          "default_value": "90",
+          "current_value": "90",
+          "is_visible": "true",
+          "description": "If a plate’s percent of passing samples is smaller than this number, all samples on the plate will show a warning in the Sample Table."
+        },
+        {
+          "name": "plate_qc_averagecallrate",
+          "type": "float",
+          "display": "Average call rate for passing samples",
+          "min_value": "0",
+          "max_value": "100",
+          "default_value": "98",
+          "current_value": "98",
+          "is_visible": "true",
+          "description": "A plate’s average QC call rate of passing samples must be larger than this number to pass plate QC."
+        }
+
+       
+      ]
+    },
+    {
+        "name": "snp_qc",
+        "display": "SNP QC",
+        "thresholds": [
+	    {
+	       "name": "species-type",
+	       "display": "species-type",
+	       "description": "Species Type",
+	       "type": "list-single",
+	       "default_value": "Diploid",
+	       "current_value": "Diploid",
+	       "is_visible": "true",
+	       "list": ["Diploid", "Human", "Polyploid"]
+            },
+            {
+              "name": "cr-cutoff",
+              "display": "cr-cutoff",
+              "description": "Threshold for call rate. If not specified, the default for human is 95 and for diploid and polyploid is 97.",
+              "type": "float",
+              "min_value": "0",
+              "max_value": "100",
+              "default_value": "95",
+              "current_value": "95",
+              "is_visible": "true"
+            },
+            {
+              "name": "fld-cutoff",
+              "display": "fld-cutoff",
+              "description": "Cut-off value for cluster quality (FLD)",
+              "type": "float",
+              "min_value": "0.0",
+              "max_value": "100.0",
+              "default_value": "3.6",
+              "current_value": "3.6",
+              "is_visible": "true"
+            },
+            {
+              "name": "het-so-cutoff",
+              "display": "het-so-cutoff",
+              "description": "Cut-off value for the correctness of the vertical position of the heterozygous cluster (Strength Offset)",
+              "type": "float",
+              "min_value": "-10.0",
+              "max_value": "10.0",
+              "default_value": "-0.4",
+              "current_value": "-0.4",
+              "is_visible": "true"
+            },
+            {
+              "name": "het-so-otv-cutoff",
+              "display": "het-so-otv-cutoff",
+              "description": "Cut-off value for the existence of a fourth cluster below the heterozygous cluster (OTV)",
+              "type": "float",
+              "min_value": "-10.0",
+              "max_value": "10.0",
+              "default_value": "-0.4",
+              "current_value": "-0.4",
+              "is_visible": "true"
+            },
+            {
+              "name": "hom-ro-1-cutoff",
+              "display": "hom-ro-1-cutoff",
+              "description": "Cut-off value for the correctness of the horizontal position of the homozygous clusters (Ratio Offset) when a SNP has one genotype",
+              "type": "float",
+              "min_value": "-10.0",
+              "max_value": "10.0",
+              "default_value": "0.6",
+              "current_value": "0.6",
+              "is_visible": "true"
+            },
+            {
+              "name": "hom-ro-2-cutoff",
+              "display": "hom-ro-2-cutoff",
+              "description": "Cut-off value for the correctness of the horizontal position of the homozygous clusters (Ratio Offset) when a SNP has two genotypes",
+              "type": "float",
+              "min_value": "-10.0",
+              "max_value": "10.0",
+              "default_value": "0.3",
+              "current_value": "0.3",
+              "is_visible": "true"
+            },
+            {
+              "name": "hom-ro-3-cutoff",
+              "display": "hom-ro-3-cutoff",
+              "description": "Cut-off value for the correctness of the horizontal position of the homozygous clusters (Ratio Offset) when a SNP has three genotypes",
+              "type": "float",
+              "min_value": "-10.0",
+              "max_value": "10.0",
+              "default_value": "-0.9",
+              "current_value": "-0.9",
+              "is_visible": "true" 
+            },
+            {
+              "name": "hom-ro",
+              "display": "hom-ro",
+              "description": "Flag indicating whether the metric HomRO is used in classification",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "hom-het",
+              "display": "hom-het",
+              "description": "Flag indicating whether the metric HomHet is used in classification. The HomHet metric identifies two-cluster SNPs/probesets with one homozygote cluster and one heterozygote cluster. This checks if the minor homozygote cluster is missing, which is unreasonable for highly inbred species (e.g. wheat). This metric should be turned on when classifying SNPs/probesets in highly inbred species",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "num-minor-allele-cutoff",
+              "display": "num-minor-allele-cutoff",
+              "description": "the number of minor alleles",
+              "type": "float",
+              "min_value": "1",
+              "max_value": "10000",
+              "default_value": "2.0",
+              "current_value": "2.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "priority-order",
+              "display": "priority-order",
+              "description": "When performing probeset selection, the best probeset is selected according to the priority order of probeset conversion types",
+              "type": "list-all",
+              "default_value": "PolyHighResolution, NoMinorHom, OTV, MonoHighResolution, CallRateBelowThreshold",
+              "current_value": "PolyHighResolution, NoMinorHom, OTV, MonoHighResolution, CallRateBelowThreshold",
+              "list": ["PolyHighResolution", "NoMinorHom", "OTV", "MonoHighResolution", "CallRateBelowThreshold"],
+              "is_visible": "true"
+            },
+            {
+              "name": "recommended",
+              "display": "recommended",
+              "description": "recommended",
+              "type": "check-list",
+              "default_value": "PolyHighResolution, NoMinorHom, MonoHighResolution, Hemizygous",
+              "current_value": "PolyHighResolution",
+              "list": ["PolyHighResolution", "NoMinorHom", "OTV", "MonoHighResolution", "CallRateBelowThreshold", "Hemizygous"],
+              "is_visible": "true"
+            }
+         ]
+      },
+      {
+        "name": "ps_supplemental",
+        "display": "PS Supplemental",
+        "thresholds": [
+            {
+              "name": "homfld-cut",
+              "display": "homfld-cut",
+              "description": "homfld-cut",
+              "type": "float",
+              "min_value": "0",
+              "max_value": "100",
+              "default_value": "6.5",
+              "current_value": "6.5",
+              "is_visible": "true"
+            },
+            {
+              "name": "bb-varx-cut",
+              "display": "bb-varx-cut",
+              "description": "bb-varx-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "bb-vary-cut",
+              "display": "bb-vary-cut",
+              "description": "bb-vary-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "ab-varx-cut",
+              "display": "ab-varx-cut",
+              "description": "ab-varx-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "ab-vary-cut",
+              "display": "ab-vary-cut",
+              "description": "ab-vary-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "aa-varx-cut",
+              "display": "aa-varx-cut",
+              "description": "aa-varx-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "aa-vary-cut",
+              "display": "aa-vary-cut",
+              "description": "aa-vary-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "bb-varx-z-cut-enabled",
+              "display": "bb-varx-z-cut-enabled",
+              "description": "bb-varx-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "bb-varx-z-cut",
+              "display": "bb-varx-z-cut",
+              "description": "bb-varx-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "bb-vary-z-cut-enabled",
+              "display": "bb-vary-z-cut-enabled",
+              "description": "bb-vary-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "bb-vary-z-cut",
+              "display": "bb-vary-z-cut",
+              "description": "bb-vary-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "ab-varx-z-cut-enabled",
+              "display": "ab-varx-z-cut-enabled",
+              "description": "ab-varx-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "ab-varx-z-cut",
+              "display": "ab-varx-z-cut",
+              "description": "ab-varx-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "ab-vary-z-cut-enabled",
+              "display": "ab-vary-z-cut-enabled",
+              "description": "ab-vary-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "ab-vary-z-cut",
+              "display": "ab-vary-z-cut",
+              "description": "ab-vary-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "aa-varx-z-cut-enabled",
+              "display": "aa-varx-z-cut-enabled",
+              "description": "aa-varx-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "aa-varx-z-cut",
+              "display": "aa-varx-z-cut",
+              "description": "aa-varx-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "aa-vary-z-cut-enabled",
+              "display": "aa-vary-z-cut-enabled",
+              "description": "aa-vary-z-cut-enabled",
+              "type": "list-single",
+              "default_value": "true",
+              "current_value": "true",
+              "is_visible": "true",
+	      "list": ["true", "false"]
+            },
+            {
+              "name": "aa-vary-z-cut",
+              "display": "aa-vary-z-cut",
+              "description": "aa-vary-z-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "3.0",
+              "current_value": "3.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "clustermin",
+              "display": "clustermin",
+              "description": "clustermin",
+              "type": "float",
+              "min_value": "1.0",
+              "default_value": "5.0",
+              "current_value": "5.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "n-minor-hom-cut",
+              "display": "n-minor-hom-cut",
+              "description": "n-minor-hom-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "0.0",
+              "current_value": "0.0",
+              "is_visible": "true"
+            },
+            {
+              "name": "hetv-maf-cut",
+              "display": "hetv-maf-cut",
+              "description": "hetv-maf-cut",
+              "type": "float",
+              "min_value": "0.0",
+              "default_value": "10.0",
+              "current_value": "10.0",
+              "is_visible": "true"
+            },
+	    {
+	       "name": "variance-class",
+	       "display": "variance-class",
+	       "description": "variance-class",
+	       "type": "check-list",
+	       "default_value": "PolyHighResolution",
+	       "current_value": "PolyHighResolution",
+	       "is_visible": "true",
+	       "list": ["PolyHighResolution", "NoMinorHom", "OTV", "MonoHighResolution", "CallRateBelowThreshold", "Other", "Hemizygous"]
+            }
+          ]
+      }
+  ]
+}

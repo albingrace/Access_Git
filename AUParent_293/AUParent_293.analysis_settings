@@ -1,0 +1,194 @@
+{
+  "Name": "",
+  "ConfigPath": "",
+  "array_type": "AUParent_293",
+  "version": "1",
+  "steps": [
+    {
+      "name": "binner_params",
+      "display": "Binner Parameters",
+      "analysis_files": [
+        {
+        "name": "seq_data_folder",
+	    "file_name": "",
+	    "type": "directory_2",
+	    "display": "Analysis Input Data",
+	    "required": true,
+	    "enabled": true,
+	    "visible": true,
+	    "is_seq": true,
+	    "is_bin": false,
+	    "is_seq_or_bin": true
+		  },
+		  {
+            "name": "locus_length",
+            "type": "int",
+            "default_value": 12,
+            "current_value": 12,
+            "min_value": 0,
+            "max_value": 100,
+            "display": "Locus Length",
+            "required": true,
+            "enabled": true,
+            "visible": true
+         },
+         {
+            "name": "locus_start",
+            "type": "int",
+            "default_value": 6,
+            "current_value": 6,
+            "min_value": 0,
+            "max_value": 10,
+            "display": "Locus Start",
+            "required": true,
+            "enabled": true,
+            "visible": true
+         },
+         
+      ]
+    },
+    {
+      "name": "sample_qc",
+      "display": "Sample QC",
+      "analysis_files": [
+        {
+          "name": "arg-file",
+          "file_name": "eureka-summary-genotype.xml",
+          "display": "Analysis File",
+          "required": true,
+          "enabled": false,
+          "visible": true,
+          "extensions": "Analysis Configuration (*.xml)|*.xml",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "snp-priors-input-file",
+          "file_name": "AUParent_293_priors.txt",
+          "display": "Prior Model File",
+          "required": true,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.models,*.txt)|*.models;*.txt|Models (*.models)|*.models|Text (*.txt)|*.txt",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "probeset-ids",
+          "file_name": "",
+          "display": "SNP List File",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.ps,*.txt,*.tsv)|*.ps;*.txt;*.tsv|Probeset List (*.ps)|*.ps|Probeset List (*.txt)|*.txt|Probeset List (*.tsv)|*.tsv",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "read-inbred",
+          "file_name": "",
+          "display": "Hints/Inbred File (optional)",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.txt,*.tsv)|*.txt;*.tsv|Text (*.txt)|*.txt|Tab Separated (*.tsv)|*.tsv",
+          "is_hint": false,
+          "is_inbred": true,
+          "is_hint_or_inbred": true,
+		  "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "probeset_genotyping",
+      "display": "Genotyping",
+      "analysis_files": [
+        {
+          "name": "arg-file",
+          "file_name": "eureka-summary-genotype.xml",
+          "display": "Analysis File",
+          "required": true,
+          "enabled": false,
+          "visible": true,
+          "extensions": "Analysis Configuration (*.xml)|*.xml",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "snp-priors-input-file",
+          "file_name": "AUParent_293_priors.txt",
+          "display": "Prior Model File",
+          "required": true,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.models,*.txt)|*.models;*.txt|Models (*.models)|*.models|Text (*.txt)|*.txt",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "probeset-ids",
+          "file_name": "",
+          "display": "SNP List File",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.ps,*.txt,*.tsv)|*.ps;*.txt;*.tsv|Probeset List (*.ps)|*.ps|Probeset List (*.txt)|*.txt|Probeset List (*.tsv)|*.tsv",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "read-inbred",
+          "file_name": "",
+          "display": "Hints/Inbred File (optional)",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.txt,*.tsv)|*.txt;*.tsv|Text (*.txt)|*.txt|Tab Separated (*.tsv)|*.tsv",
+          "is_hint": false,
+          "is_inbred": true,
+          "is_hint_or_inbred": true,
+		  "type": "file"
+        },
+        {
+          "name": "snp-posteriors-output-file",
+          "file_name": "",
+          "display": "Posterior File Name (optional)",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "Posterior Models (*.posterior.models )|*.posterior.models",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        },
+        {
+          "name": "ps2snp-file",
+          "file_name": "AUParent_293.ps2snp_map.ps",
+          "display": "ps2snp File (recommended)",
+          "required": false,
+          "enabled": true,
+          "visible": true,
+          "extensions": "All (*.ps,*.txt,*.tsv)|*.ps;*.txt;*.tsv|Probeset List (*.ps)|*.ps|Probeset List (*.txt)|*.txt|Probeset List (*.tsv)|*.tsv",
+          "is_hint": false,
+          "is_inbred": false,
+          "is_hint_or_inbred": false,
+		  "type": "file"
+        }
+      ]
+    }
+  ],
+  "is_default": true
+}

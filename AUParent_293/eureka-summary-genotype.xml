@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Parameters>
+	<Parameter name="analysis-name" analysis="main" currentValue="eureka" />
+	<Parameter name="chip-type" analysis="main" currentValue="AUParent_293" />
+	<Parameter name="brlmmp-CM" analysis="genotyping-node" currentValue="1" />
+	<Parameter name="brlmmp-bins" analysis="genotyping-node" currentValue="100" />
+	<Parameter name="brlmmp-mix" analysis="genotyping-node" currentValue="1" />
+	<Parameter name="brlmmp-bic" analysis="genotyping-node" currentValue="2" />
+	<Parameter name="brlmmp-lambda" analysis="genotyping-node" currentValue="1" />
+	<Parameter name="brlmmp-HARD" analysis="genotyping-node" currentValue="3" />
+	<Parameter name="brlmmp-SB" analysis="genotyping-node" currentValue="0.24" />
+	<Parameter name="brlmmp-transform" analysis="genotyping-node" currentValue="CES" />
+	<Parameter name="brlmmp-copyqc" analysis="genotyping-node" currentValue="0.00000" />
+	<Parameter name="brlmmp-wobble" analysis="genotyping-node" currentValue="0.05" />
+	<Parameter name="brlmmp-MS" analysis="genotyping-node" currentValue="0.15" />
+	<Parameter name="brlmmp-copytype" analysis="genotyping-node" currentValue="-1" />
+	<Parameter name="brlmmp-clustertype" analysis="genotyping-node" currentValue="2" />
+	<Parameter name="brlmmp-ocean" analysis="genotyping-node" currentValue="0.00001" />
+	<Parameter name="brlmmp-CSepPen" analysis="genotyping-node" currentValue="0.1" />
+	<Parameter name="brlmmp-CSepThr" analysis="genotyping-node" currentValue="4" />
+	<Parameter name="brlmmp-comvar" analysis="genotyping-node" currentValue="1" />
+	<Parameter name="brlmmp-K" analysis="genotyping-node" currentValue="2" />
+	<Parameter name="write-models" analysis="genotyping-node" currentValue="true" />
+	<Parameter name="allele-summaries" analysis="trimmed-mean-normalization-node" currentValue="true" />
+	<Parameter name="brlmmp-hints" analysis="genotyping-node" currentValue="1" />
+	<Parameter name="brlmmp-CP" analysis="genotyping-node" currentValue="16" />
+</Parameters>
