@@ -26,8 +26,8 @@
           "display": "EQC Max Num Of SNPs to Fail Sample (All SNPs)",
           "min_value": "0",
           "max_value": "5000",
-          "default_value": "29",
-          "current_value": "29",
+          "default_value": "21",
+          "current_value": "21",
           "is_visible": "true",
           "description": "EQC Max Num Of SNPs to Fail Sample (All SNPs)"
         },
